@@ -1,0 +1,27 @@
+id,price,description,category,times_ordered
+0,8.50,Three Tender Entree,Value Meal,0
+1,6.50,Corn Dog Value Meal,value Meal,0
+2,8.50,Hot Dog Value Meal,Value Meal,0
+3,6.50,Cheese Burger - Beef,Burger,0
+4,6.99,Cheese Burger - Bean,Burger,0
+5,6.25,Classic Burger - Beef,Burger,0
+6,6.75,Classic Burger - Bean,Burger,0
+7,7.50,Bacon Cheese Burger - Beef,Burger,0
+8,7.99,Bacon Cheese Burger - Bean,Burger,0
+9,6.99,Patty Melt - Beef,Burger,0
+10,7.50,Patty Melt - Bean,Burger,0
+11,8.50,Aggier Chicken Club,Sandwiches,0
+12,6.50,Revs Grilled Chicken Sandwich,Sandwiches,0
+13,6.50,Spicy Chicken Sandwich,Sandwiches,0
+14,8.50,Chicken Caesar Salad,Salad,0
+15,1.99,Fries,Appetizers,0
+16,5.75,Double Scoop Ice Cream,Shakes/More,0
+17,6.50,Aggie Shake,Shakes/More,0
+18,5.99,Root Beer Float,Shakes/More,0
+19,6.50,Cookie Ice Cream Sandwich,Shakes/More,0
+20,7.50,Rib Sandwich,Limited Time,0
+21,7.50,Grilled Chicken Wrap,Limited Time,0
+22,7.50,Fried Chicken Wrap,Limited Time,0
+23,0.99,Small Water,Drink,0
+24,1.50,Large Water,Drink,0
+25,1.25,Fountain Drink,Drink,0

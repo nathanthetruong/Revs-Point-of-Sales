@@ -1,4 +1,4 @@
-CREATE TABLE "Employee" (
+CREATE TABLE Employee (
   "employee_id" integer PRIMARY KEY,
   "Name" text,
   "orders" integer,
