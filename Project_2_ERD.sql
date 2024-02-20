@@ -1,45 +1,47 @@
 CREATE TABLE "Employee" (
   "employee_id" integer PRIMARY KEY,
-  "Name" string,
+  "Name" text,
   "orders" integer,
   "is_manager" boolean
 );
 
 CREATE TABLE "Customer" (
   "customer_id" integer PRIMARY KEY,
-  "name" string,
-  "orders" integer
+  "first_name" text,
+  "last_name" text
 );
 
 CREATE TABLE "Orders" (
   "order_number" integer PRIMARY KEY,
   "customer" int,
-  "total_price" double,
-  "order_time" datetime,
-  "contents" int
+  "total_price" numeric(6, 2),
+  "order_date" date,
+  "order_time" time
 );
 
 CREATE TABLE "Inventory" (
   "id" integer PRIMARY KEY,
+  "description" text,
   "quantity_remaining" integer,
   "quantity_target" integer
 );
 
 CREATE TABLE "Menu_Items" (
   "id" integer PRIMARY KEY,
-  "price" double,
-  "description" string,
-  "category" string,
+  "price" numeric(4, 2),
+  "description" text,
+  "category" text,
   "times_ordered" int
 );
 
 CREATE TABLE "Food_to_inventory" (
   "food_item_ID" int,
-  "inventory_id" int
+  "inventory_id" int,
+  "quantity" int
 );
 
 CREATE TABLE "order_breakout" (
-  "orderID" int,
+  "order_number" int,
   "foodItems" int
 );
 
@@ -56,16 +58,7 @@ ALTER TABLE "Food_to_inventory_Inventory" ADD FOREIGN KEY ("Food_to_inventory_in
 ALTER TABLE "Food_to_inventory_Inventory" ADD FOREIGN KEY ("Inventory_id") REFERENCES "Inventory" ("id");
 
 
-CREATE TABLE "Orders_order_breakout" (
-  "Orders_order_number" integer,
-  "order_breakout_orderID" int,
-  PRIMARY KEY ("Orders_order_number", "order_breakout_orderID")
-);
-
-ALTER TABLE "Orders_order_breakout" ADD FOREIGN KEY ("Orders_order_number") REFERENCES "Orders" ("order_number");
-
-ALTER TABLE "Orders_order_breakout" ADD FOREIGN KEY ("order_breakout_orderID") REFERENCES "order_breakout" ("orderID");
-
+ALTER TABLE "order_breakout" ADD FOREIGN KEY ("order_number") REFERENCES "Orders" ("order_number");
 
 CREATE TABLE "order_breakout_Menu_Items" (
   "order_breakout_foodItems" int,
@@ -78,6 +71,6 @@ ALTER TABLE "order_breakout_Menu_Items" ADD FOREIGN KEY ("order_breakout_foodIte
 ALTER TABLE "order_breakout_Menu_Items" ADD FOREIGN KEY ("Menu_Items_id") REFERENCES "Menu_Items" ("id");
 
 
-ALTER TABLE "Orders" ADD FOREIGN KEY ("order_number") REFERENCES "Customer" ("orders");
+ALTER TABLE "Orders" ADD FOREIGN KEY ("customer") REFERENCES "Customer" ("customer_id");
 
 ALTER TABLE "Orders" ADD FOREIGN KEY ("order_number") REFERENCES "Employee" ("orders");
